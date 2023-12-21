@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const instance = axios.create({
-  baseURL: "https://react-mini-projects-api.classbon.com/FastFood/",
+  baseURL: "https://react-mini-projects-api.classbon.com",
 });
 
 const useAxios = (axiosParams) => {
@@ -13,7 +13,7 @@ const useAxios = (axiosParams) => {
     try {
       const result = await instance.request(axiosParams);
       setResponse(result.data);
-      console.log(response);
+      console.log(result);
     } catch (error) {
       setError(error);
     } finally {
